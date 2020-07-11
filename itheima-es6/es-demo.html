@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>es6 测试</title>
+    <script type="text/javascript">
+
+        /*
+        for (var i = 0; i < 5; i++) {
+            console.log(i);
+        }
+        console.log("var 循环外：" + i);
+        */
+
+        /*
+        for (let i = 0; i < 5; i++) {
+            console.log(i);
+        }
+        console.log("let 循环外：" + i)
+        */
+
+        /*
+        // 模板字符串
+        // es5
+        let name1 = "itcast";
+        console.log("hello " + name1);
+        // es6
+        const name2 = "itcast";
+        console.log(`hello ${name2}`);
+
+        // es5
+        var msg = "Hello \
+                    world!";
+        // es6
+        const template = `<dev>
+                            <span>hello world!</span>
+                        </dev>`
+        */
+
+        /*
+        // 对象初始化简写
+        function person5(name, age) {
+            return {name: name, age: age};
+        }
+
+        console.log("es5=>" + JSON.stringify(person5("xiaoming", 13)));
+
+        // 以上代码可以简写为：
+        function person6(name, age) {
+            // 属性和值是同名的则可以省略为如下
+            return {name, age};
+        }
+
+        console.log("es6=>" + JSON.stringify(person6("xiaoming", 13)));
+        */
+
+        /*
+        // 箭头函数
+        // 一个参数
+        var print = function (obj) {
+            console.log(obj);
+        };
+        print("print");
+
+        var print2 = obj => console.log(obj);
+        print2("print2");
+
+        // 两个参数
+        var sum = function (a, b) {
+            return a + b;
+        }
+        console.log(sum(1, 2));
+
+        var sum2 = (a, b) => a + b;
+        console.log(sum2(1, 2));
+
+        // 代码不止一行，可以用 {} 括起来
+        var sum3 = (a, b) => {
+            console.log(a + b);
+            return a + b;
+        }
+        console.log(sum3(1, 2));
+        */
+
+        /*
+        // 对象的函数属性简写
+        let person = {
+            "name": "jack",
+            // 以前，也可以给food默认值
+            eat1: function (food = "肉") {
+                console.log(this.name + "在吃" + food);
+            },
+
+            // 箭头函数版，不能使用this
+            eat2: (food = "肉") => console.log(person.name + "在吃" + food),
+
+            // 简版
+            eat3(food) {
+                console.log(this.name + "在吃" + food)
+            }
+        }
+
+        person.eat1("111");
+        person.eat2("222");
+        person.eat3("333");
+        */
+
+        /*
+        // 箭头函数结合解构表达式
+        const person = {
+            name: "jack",
+            age: 21,
+            language: ['java', 'js', 'css']
+        }
+
+        function hello(person) {
+            console.log("hello " + person.name);
+        }
+
+        hello(person);
+
+        var hello2 = ({name}) => console.log("hello " + name);
+        hello2(person);
+        */
+
+        const promise = new Promise(function (resolve, reject) {
+            setTimeout(() => {
+                let num = Math.random();
+                if (num < 0.5) {
+                    resolve("成功！num = " + num);
+                } else {
+                    reject("失败！num = " + num);
+                }
+            }, 300)
+        });
+
+        promise.then(function (msg) {
+            console.log(msg);
+        }).catch(function (msg) {
+            console.log(msg);
+        })
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
